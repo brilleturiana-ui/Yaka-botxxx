@@ -1,5 +1,5 @@
 {
-  "name": "yakabot",
+  "name": "yakabot", 
   "version": "6.6.6",
   "description": "Hi, I'm a WhatsApp Bot !!.",
   "main": "index.js",
