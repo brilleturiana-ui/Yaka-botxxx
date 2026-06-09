@@ -113,3 +113,4 @@ if (levelRole <= 2) {
                 const randomHexs = `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`
                 const randomHex = `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`
                 const randomHexz = `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`
+		           await Yaka.sendMessage(m.from, { text: textr }, { quoted: m });
