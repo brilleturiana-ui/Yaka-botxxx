@@ -95,7 +95,6 @@
     "superagent": "^8.0.9",
     "upscaler": "^1.0.0-beta.13",
     "util": "^0.12.5",
-    "wa-sticker-formatter": "^4.3.2",
     "wikipedia": "^1.2.0",
     "yargs": "^17.6.2",
     "yarn": "^1.22.19",
