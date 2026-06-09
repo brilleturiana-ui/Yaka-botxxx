@@ -14,6 +14,20 @@ module.exports = {
 await Yaka.sendMessage(m.from, { sticker: media }, { quoted: m });
         }
         else if (/video/.test(mime)) {
+    let media = await quoted.download();
+
+    // ⏱️ Step 4: Check video length
+    if ((quoted.msg || quoted).seconds > 15) {
+        return Yaka.sendMessage(
+            m.from,
+            { text: 'Please send video less than 15 seconds.' },
+            { quoted: m }
+        );
+    }
+
+    // ✅ If short enough, send as sticker
+    await Yaka.sendMessage(m.from, { sticker: media }, { quoted: m });
+}
             let mediaMess = await quoted.download();
             if ((quoted.msg || quoted).seconds > 15)  return Yaka.sendMessage(m.from,{text:'Please send video less than 15 seconds.'},{quoted:m})
             let stickerMess = new Sticker(mediaMess, {
