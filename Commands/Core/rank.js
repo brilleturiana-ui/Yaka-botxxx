@@ -101,7 +101,6 @@ if (levelRole <= 2) {
 			} else {
 				textr += `*${m.sender}#${disc}'s* Exp\n\n`
 			}
-			textr += `*🎯️ XP*: ${userq.xp} / ${Levels.xpFor(userq.level + 1)}\n*❤️ Level*: ${userq.level}\n*🔮️ Role*: ${role}`
 
 			try {
                     ppuser = await Yaka.profilePictureUrl(m.sender, 'image')
