@@ -110,7 +110,5 @@ if (levelRole <= 2) {
                     ppuser=await fetchBuffer(pppuser)
 
                 }
-                const randomHexs = `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`
-                const randomHex = `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`
-                const randomHexz = `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`
-		           await Yaka.sendMessage(m.from, { text: textr }, { quoted: m });
+                   textr += `*🎯️ XP*: ${userq.xp} / ${Levels.xpFor(userq.level + 1)}\n*❤️ Level*: ${userq.level}\n*🔮️ Role*: ${role}`
+                   await Yaka.sendMessage(m.from, { text: textr }, { quoted: m });
