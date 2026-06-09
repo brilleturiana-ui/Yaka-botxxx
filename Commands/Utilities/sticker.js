@@ -8,7 +8,6 @@ module.exports = {
     usage: "sticker <reply to image>",
     react: "👹",
     start: async (Yaka, m, { text, prefix,quoted,pushName,mime,body }) => {
-        if (/image/.test(mime)) {
         else if (/video/.test(mime)) {
     let media = await quoted.download();
 
