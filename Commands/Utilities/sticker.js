@@ -29,9 +29,4 @@ module.exports = {
             );
         }
     }
-}            const stickerBuffer2 = await stickerMess.toBuffer()
-             Yaka.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m })
-    }else{
-        Yaka.sendMessage(m.from,{text:`Please mention an *image/video* and type *${prefix}s* to create sticker.`},{quoted:m})
-    } 
-}}
+}
