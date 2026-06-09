@@ -9,10 +9,6 @@ module.exports = {
     react: "👹",
     start: async (Yaka, m, { text, prefix,quoted,pushName,mime,body }) => {
         if (/image/.test(mime)) {
-            let mediaMess = await quoted.download();
-            let media = await quoted.download();
-await Yaka.sendMessage(m.from, { sticker: media }, { quoted: m });
-        }
         else if (/video/.test(mime)) {
     let media = await quoted.download();
 
