@@ -1,4 +1,4 @@
-const canvacord=require('canvacord')
+// const canvacord=require('canvacord')
 const {fetchBuffer}=require("../../lib/Function")
 module.exports={
     name: "rank",
@@ -113,22 +113,3 @@ if (levelRole <= 2) {
                 const randomHexs = `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`
                 const randomHex = `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`
                 const randomHexz = `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`
-
-			                const rank = new canvacord.Rank()
-                    .setAvatar(ppuser)
-                    .setLevel(userq.level)
-                    .setLevelColor(randomHexs, randomHex)
-                    .setCurrentXP(userq.xp)
-                    .setOverlay(randomHex, 100, false)
-                    .setRequiredXP(Levels.xpFor(userq.level + 1))
-                    .setProgressBar(randomHexs, 'COLOR')
-				    .setRank(0, role, false)
-                    .setBackground('COLOR', randomHexz)
-                    .setUsername(pushName)
-                    .setDiscriminator(disc)
-                rank.build().then(async(data)=>{
-					Yaka.sendMessage(m.from,{image:data,caption:textr},{quoted:m})
-  })
-
-    }
-}
