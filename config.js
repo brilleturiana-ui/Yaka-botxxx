@@ -21,27 +21,24 @@ I am,
    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝
                                                     */
                                                    
-require("dotenv").config();
+// require("dotenv").config();
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
 
-let gg = process.env.MODS;
-if (!gg) {
-  gg = "94774516277";   // You can Change this number //
-}
+  let gg = "918280823289";   // Replace With your Whatsapp Number
+
 
 // -------------------------------------------------------------- //
 
 
 global.owner = gg.split(",");
-global.mongodb = process.env.MONGODB || "mongodb+srv://ThatOneGirlWithBigBootyAndBoobs2023:SendMeUrBoobsPic4535@cluster2023.bblquhi.mongodb.net/?retryWrites=true&w=majority"; // paste your own MongoDB url..
-global.sessionId = process.env.SESSION_ID || "ok";
-global.prefa = process.env.PREFIX || ".";
-global.tenorApiKey =
-  process.env.TENOR_API_KEY || "AIzaSyCAYZ930Rq1EFiRNRJuSeGGrKljCnOb8-U"; // paste Your own Api Key..
-global.packname = process.env.PACKNAME || `👹 𝕐𝕒𝕜𝕒ᵐᵈ`;
-global.author = process.env.AUTHOR || "by: 𝖄𝖆𝖐𝖆𝖘𝖍𝖎";
-global.port = process.env.PORT || "8000";
+global.mongodb = "your_mongodb_url_here"; // paste your own MongoDB url..
+global.sessionId = "ok";
+global.prefa = ".";
+global.tenorApiKey = "YOUR_TENOR_API_KEY"; // paste Your own Api Key..
+global.packname = `👹 𝕐𝕒𝕜𝕒ᵐᵈ`;
+global.author = "by: Miguel Kowalskk";
+global.port = "8000";
 
 module.exports = {
   mongodb: global.mongodb,
