@@ -110,4 +110,5 @@ if (levelRole <= 2) {
 
                 }
                    textr += `*🎯️ XP*: ${userq.xp} / ${Levels.xpFor(userq.level + 1)}\n*❤️ Level*: ${userq.level}\n*🔮️ Role*: ${role}`
-                   await Yaka.sendMessage(m.from, { text: textr }, { quoted: m });
+                   
+		           await Yaka.sendMessage(m.from, { text: textr }, { quoted: m });
