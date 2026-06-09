@@ -1,40 +1,35 @@
-
-
 module.exports = {
     name: "sticker",
     alias: ["s"],
-    desc: "To make sticker",
+    desc: "Convert image/video to sticker",
     category: "Utilities",
-    usage: "sticker <reply to image>",
+    usage: "sticker <reply to image/video>",
     react: "👹",
-    start: async (Yaka, m, { text, prefix,quoted,pushName,mime,body }) => {
+    start: async (Yaka, m, { prefix, quoted, mime }) => {
+        if (/image/.test(mime)) {
+            let media = await quoted.download();
+            await Yaka.sendMessage(m.from, { sticker: media }, { quoted: m });
+        } 
         else if (/video/.test(mime)) {
-    let media = await quoted.download();
-
-    // ⏱️ Step 4: Check video length
-    if ((quoted.msg || quoted).seconds > 15) {
-        return Yaka.sendMessage(
-            m.from,
-            { text: 'Please send video less than 15 seconds.' },
-            { quoted: m }
-        );
+            let media = await quoted.download();
+            if ((quoted.msg || quoted).seconds > 15) {
+                return Yaka.sendMessage(
+                    m.from,
+                    { text: 'Please send video less than 15 seconds.' },
+                    { quoted: m }
+                );
+            }
+            await Yaka.sendMessage(m.from, { sticker: media }, { quoted: m });
+        } 
+        else {
+            await Yaka.sendMessage(
+                m.from,
+                { text: `Reply to an *image/video* and type *${prefix}s* to create sticker.` },
+                { quoted: m }
+            );
+        }
     }
-
-    // ✅ If short enough, send as sticker
-    await Yaka.sendMessage(m.from, { sticker: media }, { quoted: m });
-}
-            let mediaMess = await quoted.download();
-            if ((quoted.msg || quoted).seconds > 15)  return Yaka.sendMessage(m.from,{text:'Please send video less than 15 seconds.'},{quoted:m})
-            let stickerMess = new Sticker(mediaMess, {
-                pack: packname,
-                author: pushName,
-                type: StickerTypes.FULL,
-                categories: ['🤩', '🎉'],
-                id: '12345',
-                quality: 70,
-                background: 'transparent'
-            });
-            const stickerBuffer2 = await stickerMess.toBuffer()
+}            const stickerBuffer2 = await stickerMess.toBuffer()
              Yaka.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m })
     }else{
         Yaka.sendMessage(m.from,{text:`Please mention an *image/video* and type *${prefix}s* to create sticker.`},{quoted:m})
